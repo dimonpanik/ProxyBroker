@@ -342,6 +342,7 @@ async def handle(proxies, outfile, format):
     with outformat(outfile, format):
         is_json = format == 'json'
         is_proxychains = format == 'proxychains'
+        is_ipport = format == 'ipport'
         is_first = True
         while True:
             proxy = await proxies.get()
@@ -352,6 +353,8 @@ async def handle(proxies, outfile, format):
                 line = '%s' % json.dumps(proxy.as_json())
             if is_proxychains:
                 line = '%s\n' % proxy.as_proxychains()
+            if is_ipport:
+                line = '%s\n' % proxy.as_ipport()
             else:
                 line = '%r\n' % proxy
 
