@@ -348,16 +348,17 @@ async def handle(proxies, outfile, format):
             proxy = await proxies.get()
             if proxy is None:
                 break
-
             if is_json:
                 line = '%s' % json.dumps(proxy.as_json())
-            if is_proxychains:
+                
+            elif is_proxychains:
                 line = '%s\n' % proxy.as_proxychains()
-            if is_ipport:
+ 
+            elif is_ipport:
                 line = '%s\n' % proxy.as_ipport()
+                
             else:
                 line = '%r\n' % proxy
-
             if is_json and not is_first:
                 outfile.write(',\n')
             outfile.write(line)
