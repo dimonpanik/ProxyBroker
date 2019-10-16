@@ -131,6 +131,12 @@ class Proxy:
         :rtype: dict
         """
         return self._types
+    def as_proxychains(self):
+        tp = list(self.types.keys())[0] if self.types.keys() else "http"
+        return "%s  %s  %s" % (tp.lower(), self.host, self.port)
+
+    def as_ipport(self):
+        return "%s:%s" % (self.host, self.port)
 
     @property
     def is_working(self):
