@@ -816,4 +816,8 @@ PROVIDERS = [
     # Proxynova_com(proto=('HTTP', 'CONNECT:80', 'HTTPS', 'CONNECT:25')), # 818
     # _50kproxies_com(),  # 822
     # Free_proxy_cz(),  # 420
+    #
+    #plz add this https://openproxy.space/list/
+    #
+    #
 ]
