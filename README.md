@@ -2,9 +2,9 @@
 * Original repo: https://github.com/constverum/ProxyBroker
 
 # Install 
-'''sh
+```sh
 pip3 install -U git+https://github.com/dimonpanik/ProxyBroker-adding-change-output.git
-'''
+```
 
 # Adding:
 -  Proxychains config output    ( -f proxychains)
